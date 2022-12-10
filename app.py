@@ -15,9 +15,11 @@ def home_handler():
 
 @app.route('/story', methods=["POST"])
 def generated_story():
-    gen_words = {}
+    """ End point that generates client chooses values """
+    gen_words = {}  # dict that holds words: value from form
     for val in request.form:
         gen_words[val] = request.form[val]
 
+    # return generated story to the browser
     return render_template("views/results.html",
                            generated_story=story.generate(gen_words))
