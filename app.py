@@ -10,6 +10,7 @@ debug = DebugToolbarExtension(app)
 
 @app.route('/')
 def home_handler():
+    """ Render index.html """
     return render_template("views/index.html", prompt=story.prompts)
 
 
