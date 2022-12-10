@@ -1,0 +1,16 @@
+{% extends 'views/base.html' %}
+
+{% block title %} MADLIB FORM {% endblock %}
+{% block content %}
+    <h1>MADLIBS</h1>
+    <form class="user-input-form" action="/story" method="POST">
+        <h3>Enter fields</h3>
+        <hr>
+        {% for word in prompt %}
+        <label for={{word}}>{{word}}: </label>
+        <input required placeholder={{word}} type="text" name={{word}}>
+        {% endfor %}
+        <hr>
+        <button>Submit</button>
+    </form>
+{% endblock %}
